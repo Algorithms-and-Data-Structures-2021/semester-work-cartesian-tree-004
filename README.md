@@ -1,4 +1,4 @@
-# Название семестровой работы
+# 
 
 [![CMake](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-template/actions/workflows/cmake.yml/badge.svg)](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-template/actions/workflows/cmake.yml)
 
@@ -21,14 +21,11 @@ _Заполните таблицу с указанием вклада каждо
 
 **Примечание**. Преподаватель может определить вклад любого из участников команды по истории коммитов.
 
-| Фамилия Имя   | Вклад (%) | Прозвище              |
-| :---          |   ---:    |  ---:                 |
-| Участник №1   | 50        |  _босс_               |
-| Участник №2   | 40        |  _потрошитель памяти_ |
-| Участник №3   | 10        |  _самозванец_         |
+| Сабитов Данияр   | 50        |  _босс_    |           |
+| Илья Усанов      | 50        |  _не босс_ |
 
 **Девиз команды**
-> _Наши цели ясны. Задачи определены. За работу, товарищи!_
+> _Таков наш путь_
 
 ## Структура проекта
 
@@ -70,7 +67,7 @@ _Опишите процесс сборки проекта._
 возможности IDE):
 
 ```shell
-git clone https://github.com/Algorithms-and-Data-Structures-2021/semester-work-template.git
+git clone https://github.com/Algorithms-and-Data-Structures-2021/semester-work-cartesian-tree-004.git
 ```
 
 Для ручной сборки проекта в терминале введите:
