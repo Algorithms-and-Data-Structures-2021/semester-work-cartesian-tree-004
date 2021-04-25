@@ -27,7 +27,7 @@ using namespace std;
 
   Node* nulltree = NULL;
 
-  int cnt(Node* tree) //counting vertexes in a tree
+  int cnt(Node* tree) // Подсчёт вершин в дереве
   {
     if (tree == NULL)
       return 0;
@@ -41,12 +41,12 @@ using namespace std;
     return cnt(tree->left);
   }
 
-  void update (Node* tree) //updating information about vertex via its child
+  void update (Node* tree) // Обновление информации о вершине через ее дочерний элемент
   {
     tree->cnt = cnt(tree->left) + cnt(tree->right) + 1;
   }
 
-  Node* merge (Node* left_tree, Node* right_tree) //merging two trees
+  Node* merge (Node* left_tree, Node* right_tree) // Слияние двух деревьев
   {
     if (left_tree == NULL)
       return right_tree;
@@ -63,9 +63,9 @@ using namespace std;
     return right_tree;
   }
 
-  pair<Node*, Node*> split (Node* tree, int num) //spliting tree by number
-  {                                              //giving number will be the last in left part
-    if (tree == NULL)                          //numeration starts from 0
+  pair<Node*, Node*> split (Node* tree, int num) // Разбиение дерева по номеру
+  {                                              // Получение номера, который будет последним в левой части
+    if (tree == NULL)                          // Нумерация начинается с 0
       return mp(nulltree, nulltree);
     if (index(tree) <= num)
     {
@@ -78,8 +78,8 @@ using namespace std;
     return mp(tt.first, tree);
   }
 
-  Node* insert (Node* tree, int value, int num) //inserting an element by its value and number
-  {                                             //if there is no such number in trees, element will be added in the nearest place
+  Node* insert (Node* tree, int value, int num) // Вставка элемента по его значению и номеру
+  {                                             // Если в деревьях такого числа нет, элемент будет добавлен в ближайшее место
     auto tt = split(tree, num - 1);
     Node* new_elem = new Node(value);
     tt.first = merge(tt.first, new_elem);
@@ -87,15 +87,15 @@ using namespace std;
     return tree;
   }
 
-  Node* erase (Node* tree, int num) //erasing an element by number
-  {                                 //if there is no such number, nothing will be erased
+  Node* erase (Node* tree, int num) // Стирание элемента по номеру
+  {                                 // Если такого номера нет, ничего не будет стёрто
     auto tt = split(tree, num);
     auto tt2 = split(tt.first, num - 1);
     tree = merge(tt2.first, tt.second);
     return tree;
   }
 
-  void print_tree (Node* tree) //in-order printing tree in line
+  void print_tree (Node* tree) // Рисует дерево в порядке очереди
   {
     if (tree == NULL)
       return;
