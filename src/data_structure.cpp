@@ -9,21 +9,8 @@ namespace itis {
 
 using namespace std;
 
-#define mp make_pair
 
-  struct Node
-  {
-    Node *left, *right;
-    long long value, cnt, y;
-    Node() {}
-    Node(long long value)
-    {
-      this->value = value;
-      left = right = NULL;
-      y = (rand() << 16) ^ rand();
-      cnt = 1;
-    }
-  };
+#define mp make_pair
 
   Node* nulltree = NULL;
 
